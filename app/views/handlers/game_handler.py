@@ -34,3 +34,7 @@ def add_game(session, winner_id, loser_id, submitted_by_id):
 
     return new_game
 
+
+def delete_game(session, id):
+    game = session.query(Game).get(id)
+    session.delete(game)

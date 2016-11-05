@@ -23,6 +23,9 @@
             <th>Opponent</th>
             <th>Outcome</th>
             <th>Date</th>
+            {% if not g.user.admin %}
+            <th>Delete</th>
+            {% endif %}
         </tr>
     </thead>
     <tbody>
@@ -32,6 +35,9 @@
             <td><a href="/profile/{{ result.opponent_id }}">{{ result.opponent_name }}</a></td>
             <td>{{ result.outcome }}</td>
             <td>{{ result.date }}</td>
+            {% if not g.user.admin %}
+            <td><a href="/game/delete/{{ result.id }}"><i class="fa fa-times" aria-hidden="true"></i></a></td>
+            {% endif %}
         </tr>
         {% endfor %}
 

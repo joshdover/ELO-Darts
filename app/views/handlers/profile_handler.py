@@ -35,7 +35,8 @@ def get_profile_data(session, user_id):
             'opponent_name': opponent_name,
             'opponent_id': opponent_id,
             'outcome': outcome,
-            'date': game_date
+            'date': game_date,
+            'id': game.id
         })
 
     return user, outcomes
